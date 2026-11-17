@@ -1,0 +1,11 @@
+# Raw data (comes from the instructor; never commit it)
+data/
+
+# Power BI Project (.pbip) local files - only used if we switch to .pbip later
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Office lock/temp files and backups
+~$*
+*.tmp
+*.bak
