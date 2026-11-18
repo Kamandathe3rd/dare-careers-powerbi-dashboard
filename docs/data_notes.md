@@ -43,7 +43,10 @@ No blanks or duplicate rows were found. Scores of 0 exist (Cloud: 4 labs, 2 quiz
 | Dropout | `Non Graduate` counts as a dropout |
 | Certification Type slicer | Left out – not in the data |
 | Month/Week filter for assessments | Each weekly score is dated to that week's last class day (from Attendance), e.g. Week 9 → 04-Oct (October) |
-
+| Total Hours in Class | Only sessions counted as attended (> 30 min); AWS Cloud 1,813.02 h vs 1,930.67 h for all minutes |
+| Participation vs 30-min rule | Kept separate: rule applies to attendance; 373 AWS Cloud participations happened in sessions of 30 min or less |
+| Scores of 0 | Count as 0 in averages; count as NOT completed for Labs Completed |
+| Avg attendance per learner | Equals overall Attendance Rate, because every learner in a track has the same 50 sessions |
 ## Key facts (for checking the dashboard)
 | Metric | Cloud | Power BI | Total |
 |---|---|---|---|
