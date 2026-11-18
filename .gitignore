@@ -9,3 +9,5 @@ data/
 ~$*
 *.tmp
 *.bak
+
+.idea/
