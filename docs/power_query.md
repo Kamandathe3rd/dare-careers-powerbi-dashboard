@@ -91,9 +91,13 @@ let
 
     // 12. Remaining text columns
     #"Typed Text" = Table.TransformColumnTypes(#"Cleaned Email",
-        {{"Name", type text}, {"Role", type text}})
+        {{"Name", type text}, {"Role", type text}}),
+
+    // 13. 30-minute rule: Attended only if MORE than 30 minutes
+    #"Added Attended" = Table.AddColumn(#"Typed Text", "Attended",
+        each if [Minutes] > 30 then 1 else 0, Int64.Type)
 in
-    #"Typed Text"
+    #"Added Attended"
 ```
 
 ## Assessments
