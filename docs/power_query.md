@@ -141,9 +141,18 @@ let
     #"Cleaned" = Table.TransformColumns(#"Expanded Long", {
         {"Week",  each Number.From(Text.AfterDelimiter(_, "Week ")), Int64.Type},
         {"Email", each Text.Lower(Text.Trim(_)), type text},
-        {"Score", each Number.From(_), Int64.Type}})
+        {"Score", each Number.From(_), Int64.Type}}),
+
+    // 10. Last class date of each week, per track (from Attendance)
+    WeekEnds = Table.Group(Attendance, {"Track", "Week"},
+        {{"Date", each List.Max([Date]), type date}}),
+
+    // 11. Give each score the date its week ended
+    #"Merged Date" = Table.NestedJoin(#"Cleaned", {"Track", "Week"},
+        WeekEnds, {"Track", "Week"}, "W", JoinKind.LeftOuter),
+    #"Expanded Date" = Table.ExpandTableColumn(#"Merged Date", "W", {"Date"})
 in
-    #"Cleaned"
+    #"Expanded Date"
 ```
 
 ## Participation

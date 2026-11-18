@@ -42,6 +42,7 @@ No blanks or duplicate rows were found. Scores of 0 exist (Cloud: 4 labs, 2 quiz
 | Cohort | Each track is one cohort |
 | Dropout | `Non Graduate` counts as a dropout |
 | Certification Type slicer | Left out – not in the data |
+| Month/Week filter for assessments | Each weekly score is dated to that week's last class day (from Attendance), e.g. Week 9 → 04-Oct (October) |
 
 ## Key facts (for checking the dashboard)
 | Metric | Cloud | Power BI | Total |
