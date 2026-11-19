@@ -260,3 +260,18 @@ let
 in
     #"Typed"
 ```
+## Weeks (dimension)
+```
+let
+    // 1. Every program week that appears in the Zoom folders
+    Source = Table.Distinct(Table.SelectColumns(Attendance, {"Week"})),
+
+    // 2. In order
+    #"Sorted" = Table.Sort(Source, {{"Week", Order.Ascending}}),
+
+    // 3. Friendly label for slicers
+    #"Added Label" = Table.AddColumn(#"Sorted", "Week Label",
+        each "Week " & Text.From([Week]), type text)
+in
+    #"Added Label"
+```

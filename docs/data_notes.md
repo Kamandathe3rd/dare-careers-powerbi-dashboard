@@ -36,17 +36,22 @@ data/raw/
 No blanks or duplicate rows were found. Scores of 0 exist (Cloud: 4 labs, 2 quizzes; Power BI: 13 labs, 11 quizzes).
 
 ## Decisions
-| Brief asks for | Decision |
+| Topic | Decision |
 |---|---|
 | Attendance | "Attended" only if Duration **> 30** minutes (exactly 30 = not attended) |
-| Cohort | Each track is one cohort |
-| Dropout | `Non Graduate` counts as a dropout |
-| Certification Type slicer | Left out – not in the data |
-| Month/Week filter for assessments | Each weekly score is dated to that week's last class day (from Attendance), e.g. Week 9 → 04-Oct (October) |
+| Cohort | One cohort with two tracks. Label derived from each learner's first class month ("Aug 2024 Cohort"), so future intakes are labelled automatically |
+| Track | From the folder name (Cloud Training → AWS Cloud, PowerBI Training → Power BI), found anywhere in the path so cohort subfolders work |
+| Certification Type | AWS (AWS Cloud track) / Power BI (Power BI track) for every learner – the certification their track leads to |
+| Truncated attendance | Last attended session (> 30 min) is before the cohort/track's final class day, or no attended session at all → 10 learners (all AWS Cloud) |
+| Dropout | Non Graduate **AND** Not Certified **AND** truncated attendance → 2 learners (Anthony Mitchell, Natalie Collins) |
+| Program Status | Status of the cohort/track program run (Completed once its last class date has passed) – not the learner's own outcome |
+| Week slicer | Program week 1–10 from the Zoom folders via a `Weeks` table, so "Week 1" is each cohort's own first week |
+| Assessment dates | Each weekly score is dated to that learner's last class day of the week (Email + Week), e.g. Week 9 → 04-Oct (October) |
+| Participation → learner | Email and Week looked up on Track + Date + Name (cohort-safe) |
 | Total Hours in Class | Only sessions counted as attended (> 30 min); AWS Cloud 1,813.02 h vs 1,930.67 h for all minutes |
-| Participation vs 30-min rule | Kept separate: rule applies to attendance; 373 AWS Cloud participations happened in sessions of 30 min or less |
+| Participation vs 30-min rule | Kept separate: the rule applies to attendance; 373 AWS Cloud participations happened in sessions of 30 min or less |
 | Scores of 0 | Count as 0 in averages; count as NOT completed for Labs Completed |
-| Avg attendance per learner | Equals overall Attendance Rate, because every learner in a track has the same 50 sessions |
+| Avg attendance per learner | Equals the overall Attendance Rate, because every learner in a track has the same 50 sessions |
 ## Key facts (for checking the dashboard)
 | Metric | Cloud | Power BI | Total |
 |---|---|---|---|
@@ -54,5 +59,6 @@ No blanks or duplicate rows were found. Scores of 0 exist (Cloud: 4 labs, 2 quiz
 | Zoom rows | 2,000 | 5,000 | 7,000 |
 | Attendance rate (> 30 min) | 79.25% | 100% | – |
 | Graduates | 33 | 86 | 119 |
-| Dropouts (Non Graduate) | 7 | 14 | 21 |
+| Truncated attendance | 10 | 0 | 10 |
+| Dropouts (all 3 conditions) | 2 | 0 | 2 |
 | Certified | 24 | 68 | 92 |

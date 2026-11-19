@@ -81,10 +81,10 @@ EVALUATE
 | Total Learners | 40 | 100 | 140 |
 | Total Graduations | 33 | 86 | 119 |
 | Total Certifications | 24 | 68 | 92 |
-| Total Dropouts | 7 | 14 | 21 |
+| Total Dropouts | 2 | 0 | 2 |
 | Graduation Rate | 82.50% | 86.00% | 85.00% |
 | Certification Rate | 60.00% | 68.00% | 65.71% |
-| Dropout Rate | 17.50% | 14.00% | 15.00% |
+| Dropout Rate | 5.00% | 0.00% | 1.43% |
 | Total Sessions | 2,000 | 5,000 | 7,000 |
 | Sessions Attended | 1,585 | 5,000 | 6,585 |
 | Attendance Rate | 79.25% | 100.00% | 94.07% |
