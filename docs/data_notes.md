@@ -52,6 +52,7 @@ No blanks or duplicate rows were found. Scores of 0 exist (Cloud: 4 labs, 2 quiz
 | Participation vs 30-min rule | Kept separate: the rule applies to attendance; 373 AWS Cloud participations happened in sessions of 30 min or less |
 | Scores of 0 | Count as 0 in averages; count as NOT completed for Labs Completed |
 | Avg attendance per learner | Equals the overall Attendance Rate, because every learner in a track has the same 50 sessions |
+| At-risk thresholds | Red: attendance < 75% or avg score < 45; Amber: 75–80% / 45–50. 7 learners < 75% attendance, 32 < 45 avg score, 3 on both (Aria Turner, John Miller, Nicholas Allen) |
 ## Key facts (for checking the dashboard)
 | Metric | Cloud | Power BI | Total |
 |---|---|---|---|
