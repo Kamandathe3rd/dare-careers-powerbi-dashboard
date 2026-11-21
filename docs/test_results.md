@@ -1,6 +1,6 @@
 # Test Results
 
-Tested on: (today's date) · Power BI Desktop version: (Help → About)
+Tested on: (20- Nov- 2026) · Power BI Desktop version: (2.159.1231.0 64-bit)
 All slicers cleared before each test.
 
 | # | Page | Action | Expected | Actual | Pass |
